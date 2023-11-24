@@ -1,0 +1,14 @@
+[Unit]
+Description=AMBE IP Checker Service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+User=root
+ExecStart=/usr/bin/python3 /xlxd/xlxd-ambe-server-checker/ambe_checker.py
+
+[Install]
+WantedBy=default.target
